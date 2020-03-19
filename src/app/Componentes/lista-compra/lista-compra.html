@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <title>Lista de la compra</title>
 </head>
-<body>
+<body *ngIf="(authComponent.user | async) as user;">
 <h2>Productos por comprar:</h2>
 <div class="grid">
-  <div  *ngFor="let producto of productos index as i;">
-    <img class="item" src="{{producto.img}}" id="comprado" *ngIf="!producto.comprado" (click)="seleccionarCompra(i)">
-
+  <div *ngFor="let producto of productos index as i;">
+    <img class="item" src="{{producto.img}}" id="comprado" *ngIf="!producto.comprado"
+         (click)="seleccionarCompra(user.email, user.uid, i)">
   </div>
 </div>
 <h2>Productos comprados:</h2>
 <div class="grid">
-  <div  *ngFor="let producto of productos index as i;">
-    <img  class="item" src="{{producto.img}}" id="no-comprado"  *ngIf="producto.comprado"  (click)="seleccionarCompra(i)">
+  <div *ngFor="let producto of productos index as i;">
+    <img class="item" *ngIf="producto.comprado" src="{{producto.img}}" id="no-comprado"
+         (click)="seleccionarCompra(user.email, user.uid, i)">
   </div>
 </div>
 </body>

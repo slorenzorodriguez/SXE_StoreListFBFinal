@@ -7,6 +7,9 @@ import {auth} from 'firebase';
   providedIn: 'root'
 })
 export class ServicioDeAutentService {
+  // email = '';
+  // pass = '';
+  // el usuario ya autenticado
   authUser = null;
 
   constructor(public miauth: AngularFireAuth) {
