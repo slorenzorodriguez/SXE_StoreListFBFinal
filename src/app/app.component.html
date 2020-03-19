@@ -1,2 +1,26 @@
 <router-outlet></router-outlet>
+<div *ngIf="(authComponent.user | async) as user; else login">{{user.email}} - {{user.uid}}
+  <br/><br/>
+  <button class="btn btn-secondary" (click)="authComponent.logout()">Logout</button>
+  <br/><br/>
+  <button class="btn btn-success" (click)="dbApp.altausuario(user.email, user.uid)"><i class="fas fa-check"></i> ALTA</button>
+  <button class="btn btn-danger" (click)="dbApp.bajausuario(user.uid)"><i class="far fa-trash-alt"></i> BAJA</button>
+</div>
+
 <app-lista-compra></app-lista-compra>
+
+<ng-template #login>
+  <div class="loginDiv">
+    <br/><br/>
+    <button class="btn btn-dark" (click)="authComponent.login()">
+      <i class="fab fa-github"></i>
+      Github Login
+    </button>
+    <br/><br/>
+    <button class="btn btn-danger" (click)="authComponent.glogin()">
+      <i class="fab fa-google"></i>
+      Google Login
+    </button>
+  </div>
+</ng-template>
+
