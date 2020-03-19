@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de la compra</title>
+</head>
+<body>
+<h2>Productos por comprar:</h2>
+<div class="grid">
+  <div  *ngFor="let producto of productos index as i;">
+    <img class="item" src="{{producto.img}}" id="comprado" *ngIf="!producto.comprado" (click)="seleccionarCompra(i)">
+
+  </div>
+</div>
+<h2>Productos comprados:</h2>
+<div class="grid">
+  <div  *ngFor="let producto of productos index as i;">
+    <img  class="item" src="{{producto.img}}" id="no-comprado"  *ngIf="producto.comprado"  (click)="seleccionarCompra(i)">
+  </div>
+</div>
+</body>
+</html>
+
+<!--
+<tr>
+  <td *ngIf="productos[0].comprado">{{productos[0].titulo}}</td>
+  <td *ngIf="productos[0].comprado" >{{productos[0].precio}}</td></tr>
+  <tr>
+    <td *ngIf="productos[1].comprado">{{productos[1].titulo}}</td>
+    <td *ngIf="productos[1].comprado" >{{productos[1].precio}}</td></tr>
+  <tr>
+    <td *ngIf="productos[2].comprado">{{productos[2].titulo}}</td>
+    <td *ngIf="productos[2].comprado" >{{productos[2].precio}}</td></tr>
+  <tr>
+    <td *ngIf="productos[3].comprado">{{productos[3].titulo}}</td>
+    <td *ngIf="productos[3].comprado" >{{productos[3].precio}}</td></tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h3 *ngIf="productos[0].comprado">Si</h3>
+<h3 *ngIf="!productos[0].comprado">No</h3>
+<h2>Estado de compra del producto 2:</h2>
+<h3 *ngIf="productos[1].comprado">Si</h3>
+<h3 *ngIf="!productos[1].comprado">No</h3>
+<h2>Estado de compra del producto 3:</h2>
+<h3 *ngIf="productos[2].comprado">Si</h3>
+<h3 *ngIf="!productos[2].comprado">No</h3>
+<h2>Estado de compra del producto 4:</h2>
+<h3 *ngIf="productos[3].comprado">Si</h3>
+<h3 *ngIf="!productos[3].comprado">No</h3>
+
+
+<button mdbBtn color="#A52A2A" size="sm" mdbWavesEffect type="button" class="m-0">{{producto.titulo}}</button>
+
+
+<h1>ARTÍCULOS COMPRADOS</h1>
+<table style="width: 40%;">
+<tr>asdad</tr>
+  <td>asdasd</td>
+  <td>asdasd</td>
+
+-->
+<!--
+   <td>
+     <input type="radio" name="comprado-{{i}}" [(ngModel)]="producto.comprado" [value]=true> Si
+     <input type="radio" name="comprado-{{i}}" [(ngModel)]="producto.comprado" [value]=false> No
+
+   </td>
+   -->

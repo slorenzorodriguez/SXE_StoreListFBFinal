@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h2 {
+  font-family: 'Courier New', cursive;
+  border-style: groove;
+  border-color: #e2b25e;
+  border-width: thick;
+
+  font-weight: bold;
+  text-align: center;
+  background-color: #e2b25e;
+}
+h4{
+  font-family: 'Courier New', cursive;
+  font-weight: bolder;
+  color: #FF5253;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 170px 170px 170px 170px;
+
+}
+
+.item {
+  border-radius: 3px;
+  text-align: center;
+}
+
+#comprado {
+  background-color: #FF5253;
+}
+
+
+#no-comprado {
+  background-color: #04A699;
+}
