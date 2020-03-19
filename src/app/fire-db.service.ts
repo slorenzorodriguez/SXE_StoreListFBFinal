@@ -20,8 +20,11 @@ export class FireDBService {
   }
 
   guardarProds(usuarioNuevoCorreo: string, usuarioNuevoUID: string, nomProd: string, comprado: boolean) {
-    this.db.object('users/userUID/' + usuarioNuevoUID.toString()).update({
-      correo: usuarioNuevoCorreo,
+    this.db.object('users/userUID/' + usuarioNuevoUID.toString() + '/correo').update({
+      correo: usuarioNuevoCorreo
+    });
+
+    this.db.object('users/userUID/' + usuarioNuevoUID.toString() + '/productos').update({
       [nomProd]: comprado
     });
   }
