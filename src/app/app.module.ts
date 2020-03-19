@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { StoreList } from './Componentes/compra/compra';
 import { ListaProductos } from './Componentes/lista-compra/lista-compra';
 
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +21,10 @@ import { ListaProductos } from './Componentes/lista-compra/lista-compra';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
