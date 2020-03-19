@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/StoreListDAM",
+    "public": "dist/StoreList",
     "ignore": [
       "firebase.json",
       "**/.*",
